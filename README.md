@@ -15,3 +15,8 @@ Four modes are supported:
 
 This project is just a test aimed to evaluate different approaches for I/O related use cases.
 
+Before running the script, export a environment variable set to the API URL including your API key as query string:
+
+```shell
+export API_URL=https://api.nasa.gov/planetary/apod?api_key=YOUR_API_KEY
+```
