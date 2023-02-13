@@ -141,14 +141,10 @@ def test_main(mocker, images_data, valid_response):
         return_value=images_data
     )
 
-    get_images_mock = mocker.patch(
-        "sync_mode.main.get_images"
-    )
+    get_images_mock = mocker.patch("sync_mode.main.get_images")
 
-    process_images_mock = mocker.patch(
-        "sync_mode.main.process_images"
-    )
-    
+    process_images_mock = mocker.patch("sync_mode.main.process_images")
+
     main(api_url=expected_url, start_date="2022-02-10", end_date="2022-02-13")
     get_data_mock.called_once_with(expected_url)
     process_metadata_mock.called_once_with(valid_response)

@@ -1,5 +1,7 @@
 # Counting unique colors on Nasa's POD.
 
+[![CI](https://github.com/alejandro-zuleta-globant/nasa-pod/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/alejandro-zuleta-globant/nasa-pod/actions/workflows/python-app.yml)
+
 This is small project for counting the unique colors from the Nasa's Picture of the Day. The data is got via Nasa's API so you will require an authorized API KEY. You can use this CLI by running the following commands, passing the _mode_ argument and the options _start date_ and _end_date_:
 
 ```shell
