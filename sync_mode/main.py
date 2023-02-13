@@ -11,7 +11,7 @@ def get_metadata(api_url: str):
     response = requests.get(api_url)
     if response.status_code == 200:
         return response.json()
-    return {}
+    return []
 
 
 def process_metadata(data: List[Dict]):

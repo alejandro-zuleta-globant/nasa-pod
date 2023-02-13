@@ -11,3 +11,11 @@ class NasaImage:
 
     def __repr__(self) -> str:
         return f"{self.title} - {self.url}"
+    
+    def __eq__(self, other):
+        return (
+            self.url == other.url and
+            self.media_type == other.media_type and
+            self.title == other.title and
+            self.date == other.date
+        )
