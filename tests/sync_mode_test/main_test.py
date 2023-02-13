@@ -104,10 +104,7 @@ def test_process_image_valid_media_type(mocker, images_data, capfd, binary_respo
     color_count = len(expected_img_data)
 
     image_open_mock = mocker.patch("PIL.Image.open", return_value=img_mock)
-    color_counter_mock = mocker.patch(
-        "sync_mode.main.get_color_count",
-        return_value=color_count
-    )
+    color_counter_mock = mocker.patch("sync_mode.main.get_color_count", return_value=color_count)
 
     result = process_image(image)
 
@@ -122,7 +119,7 @@ def test_main_no_data(mocker, capfd):
     expected_url = "http://test.com/&start_date=2022-02-10&end_date=2022-02-13"
     get_data_mock = mocker.patch("sync_mode.main.get_metadata", return_value=None)
     expected_message = "An error ocurred retrieving the pictures metadata.\n"
-    
+
     main(api_url=expected_url, start_date="2022-02-10", end_date="2022-02-13")
     get_data_mock.called_once_with(expected_url)
     out, _ = capfd.readouterr()
@@ -131,14 +128,10 @@ def test_main_no_data(mocker, capfd):
 
 def test_main(mocker, images_data, valid_response):
     expected_url = "http://test.com/&start_date=2022-02-10&end_date=2022-02-13"
-    get_data_mock = mocker.patch(
-        "sync_mode.main.get_metadata",
-        return_value=valid_response
-    )
+    get_data_mock = mocker.patch("sync_mode.main.get_metadata", return_value=valid_response)
 
     process_metadata_mock = mocker.patch(
-        "sync_mode.main.process_metadata",
-        return_value=images_data
+        "sync_mode.main.process_metadata", return_value=images_data
     )
 
     get_images_mock = mocker.patch("sync_mode.main.get_images")

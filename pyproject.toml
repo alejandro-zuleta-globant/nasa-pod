@@ -1,0 +1,37 @@
+[tool.ruff]
+line-length = 100
+select = [
+    # Pyflakes
+    "F",
+    # Pycodestyle
+    "E",
+    # isort
+    "I"
+]
+extend-select = ["D"]
+extend-ignore = [
+    "D107",
+    "D203",
+    "D212",
+    "D213",
+    "D402",
+    "D413",
+    "D415",
+    "D416",
+    "D417",
+]
+fix = true
+unfixable = ["F401"]
+
+src = ["async_mode", "multiprocessing_mode", "sync_mode", "thread_mode"]
+
+[tool.ruff.isort]
+known-third-party = ["requests", "PIL", "aiohttp"]
+
+
+[tool.black]
+line-length = 100
+skip-string-normalization = false
+skip-magic-trailing-comma = true
+
+target-version = "py310"
