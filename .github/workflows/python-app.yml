@@ -30,7 +30,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Ruff linting
       run: |
-        ruff check --format=github .
+        ruff check --format=github -v .
     - name: Test with pytest
       run: |
         pytest
