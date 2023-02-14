@@ -36,7 +36,7 @@ jobs:
         coverage run --source=. --omit=tests/* -m pytest
     - name: Generate coverage report
       run: |
-        run: coverage html
+        coverage html
     - name: Upload coverage report
       uses: actions/upload-artifact@v3
       with:
