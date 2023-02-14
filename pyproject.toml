@@ -23,15 +23,18 @@ extend-ignore = [
 fix = true
 unfixable = ["F401"]
 
-src = ["async_mode", "multiprocessing_mode", "sync_mode", "thread_mode"]
+src = ["async_mode", "multiprocessing_mode", "sync_mode", "thread_mode", "image"]
 
 [tool.ruff.isort]
 known-third-party = ["requests", "PIL", "aiohttp"]
+known-local-folder = ["async_mode", "multiprocessing_mode", "sync_mode", "thread_mode", "image"]
 
+[tool.ruff.pydocstyle]
+convention = "google"
 
 [tool.black]
 line-length = 100
 skip-string-normalization = false
 skip-magic-trailing-comma = true
 
-target-version = "py310"
+target-version = ["py310"]

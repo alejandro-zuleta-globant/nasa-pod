@@ -30,6 +30,13 @@ def get_api_url() -> str | None:
     default=datetime.strftime(datetime.now(), "%Y-%m-%d"),
 )
 def command(mode: str, start_date, end_date):
+    """Executes a command for processing NASA's APOD.
+
+    Args:
+        mode (str): _description_
+        start_date (_type_): _description_
+        end_date (_type_): _description_
+    """
     api_url = get_api_url()
 
     if not api_url:
@@ -42,7 +49,7 @@ def command(mode: str, start_date, end_date):
     )
 
     start_time = default_timer()
-    match mode:
+    match mode: # noqa: E999
         case "sync":
             main_sync(api_url=api_url, start_date=start_date, end_date=end_date)
         case "async":

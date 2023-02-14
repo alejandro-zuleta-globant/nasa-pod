@@ -1,8 +1,8 @@
-# Counting unique colors on Nasa's POD.
+# Counting unique colors on Nasa's APOD.
 
 [![CI](https://github.com/alejandro-zuleta-globant/nasa-pod/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/alejandro-zuleta-globant/nasa-pod/actions/workflows/python-app.yml)
 
-This is small project for counting the unique colors from the Nasa's Picture of the Day. The data is got via Nasa's API so you will require an authorized API KEY. You can use this CLI by running the following commands, passing the _mode_ argument and the options _start date_ and _end_date_:
+This is small project for counting the unique colors from the Nasa's Astronomy Picture of the Day. The data is got via Nasa's API so you will require an authorized API KEY. You can use this CLI by running the following commands, passing the _mode_ argument and the options _start date_ and _end_date_:
 
 ```shell
 python main.py sync --start_date 2022-01-13 --end_date 2022-01-15
@@ -22,3 +22,5 @@ Before running the script, export a environment variable set to the API URL incl
 ```shell
 export API_URL=https://api.nasa.gov/planetary/apod?api_key=YOUR_API_KEY
 ```
+
+Python version: 3.10
