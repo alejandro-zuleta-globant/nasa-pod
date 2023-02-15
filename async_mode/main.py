@@ -27,7 +27,7 @@ async def get_metadata(api_url: str) -> List[Dict]:
             return []
 
 
-async def process_metadata(data: List[Dict]) -> List[NasaImage] :
+async def process_metadata(data: List[Dict]) -> List[NasaImage]:
     """Process the metadata and build an object from it.
 
     Args:
@@ -37,12 +37,7 @@ async def process_metadata(data: List[Dict]) -> List[NasaImage] :
         Returns a list of NASA images objects.
     """
     return [
-        NasaImage(
-            url=p.get("url"),
-            media_type=p.get("media_type"),
-            title=p.get("title"),
-            date=p.get("date"),
-        )
+        NasaImage(url=p["url"], media_type=p["media_type"], title=p["title"], date=p["date"])
         for p in data
     ]
 
@@ -91,7 +86,7 @@ def process_image(image: NasaImage) -> int | None:
     """
     if image.media_type != "image":
         print(f"Invalid media type for {image}")
-        return # type: ignore
+        return  # type: ignore
 
     if not image.bytes:
         print(f"Corrupted bytes for image: {image}")
